@@ -1,0 +1,12 @@
+header {
+  padding: $space-medium;
+
+  button {
+    padding: 5px 10px;
+    background-color: $silver;
+    border: none;
+    font-weight: $font-weight-semi-bold;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+}

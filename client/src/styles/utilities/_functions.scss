@@ -1,0 +1,14 @@
+@function primer($mapName, $index, $reversed: false) {
+  $map: map-get(map-get($hue-maps, $mapName), $index);
+  $length: -1;
+  
+  @each $item in map-get($hue-maps, $mapName) {
+    $length: $length + 1;
+  }
+
+  @if $reversed == true {
+    $index: $length - $index;
+  }
+  
+  @return map-get(map-get($hue-maps, $mapName), $index);
+}

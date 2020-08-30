@@ -1,0 +1,9 @@
+#root, .app {
+  height: 100%;
+}
+
+.app {
+  display: grid;
+  grid-template-rows: max-content auto max-content;
+  text-align: center;
+}

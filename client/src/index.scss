@@ -1,0 +1,19 @@
+@import './styles/styles.scss';
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  color: $black;
+  font-family: $base-font-family;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  @include scrollbar(15px, $white, $silver, $black);
+}
+
+code {
+  font-family: $code-font-family;
+}

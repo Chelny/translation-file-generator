@@ -1,0 +1,38 @@
+{
+  "app": {
+    "credits": "Fait avec React et Node.js par {{author}}",
+    "title": "Générateur de fichiers de traduction"
+  },
+  "configs": {
+    "langCodes": {
+      "eng": "Anglais",
+      "fre": "Français",
+      "ger": "Allemand",
+      "ita": "Italien",
+      "keyName": "Clé de traduction",
+      "por": "Portugais",
+      "spa": "Espagnol",
+      "rus": "Russe"
+    }
+  },
+  "fileConfig": {
+    "availableLanguages": "Langues disponibles",
+    "availableLanguagesInstructions": "Désactivez la langue dans laquelle vous ne voulez pas créer de fichier de traduction.",
+    "exampleFile": "Exemples :",
+    "exampleFileCSV": "fichier CSV",
+    "exampleFileExcel": "fichier Excel",
+    "filename": "Nom du fichier",
+    "filenameInstructions": "Inscrivez le nom du fichier souhaité. Utilisez \"{lang}\" pour le code de langue (par défaut: code à 3 lettres). Basculez le commutateur ci-dessous pour utiliser le code à 2 lettres.",
+    "formErrorMsg": "Le formulaire est invalide.",
+    "generateFile": "Générer fichiers",
+    "isoCodePlaceholder": "Code à 2 lettres (ISO 639-1)",
+    "keyColumn": "Colonne de la clé",
+    "selectFile": "Choisir un fichier",
+    "selectFileHint": ".csv ou fichier Excel"
+  },
+  "fileResults": {
+    "downloadLink": "Téléchargez ici.",
+    "downloadText": "Le fichier de traduction a été généré.",
+    "downloadInstruction": "Le lien de téléchargement sera valide pendant les {{time}} prochaines minutes."
+  }
+}

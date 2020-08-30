@@ -1,0 +1,20 @@
+$screen-size-small  : 'small';
+$screen-size-medium : 'medium';
+$screen-size-large  : 'large';
+$screen-size-wide   : 'wide';
+
+$breakpoints: (
+  $screen-size-small  : 481px,
+  $screen-size-medium : 768px,
+  $screen-size-large  : 1025px,
+  $screen-size-wide   : 1281px
+) !default;
+
+$space-small  : 10px;
+$space-medium : 20px;
+$space-large  : 50px;
+
+$main-max-width: 500px;
+$main-max-width-desktop: 800px;
+
+$form-element-max-width: 300px;

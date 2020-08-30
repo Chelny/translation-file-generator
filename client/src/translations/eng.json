@@ -1,0 +1,38 @@
+{
+  "app": {
+    "credits": "Made with React and Node.js by {{author}}",
+    "title": "Translation File Generator"
+  },
+  "configs": {
+    "langCodes": {
+      "eng": "English",
+      "fre": "French",
+      "ger": "German",
+      "ita": "Italian",
+      "keyName": "Translation key",
+      "por": "Portugese",
+      "spa": "Spanish",
+      "rus": "Russian"
+    }
+  },
+  "fileConfig": {
+    "availableLanguages": "Available Languages",
+    "availableLanguagesInstructions": "Toggle off the language in which you do not want to create a translation file.",
+    "exampleFile": "Examples:",
+    "exampleFileCSV": "CSV file",
+    "exampleFileExcel": "Excel file",
+    "filename": "Filename",
+    "filenameInstructions": "Type the desired filename. Use \"{lang}\" for the language code (default: 3 letter code). Toggle the switch below to use the 2 letter code.",
+    "formErrorMsg": "The form is invalid.",
+    "generateFile": "Generate files",
+    "isoCodePlaceholder": "2 letter code (ISO 639-1)",
+    "keyColumn": "Key Column",
+    "selectFile": "Select a file",
+    "selectFileHint": ".csv or Excel file"
+  },
+  "fileResults": {
+    "downloadLink": "Download here",
+    "downloadText": "The translation file has been generated.",
+    "downloadInstruction": "The download link will be valid for the next {{time}} minutes."
+  }
+}

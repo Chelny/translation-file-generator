@@ -1,0 +1,61 @@
+.file__config {
+  section[class*="step__"] {
+    display: grid;
+    row-gap: $space-small;
+    padding: $space-small;
+    justify-content: stretch;
+
+    @include breakpoint($screen-size-medium) {
+      justify-content: center;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 1fr repeat(2, 2fr);
+
+      .col {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:nth-of-type(2) {
+          font-weight: $font-weight-semi-bold;
+        }
+
+        &.deactivated {
+          color: $gray;
+        }
+
+        > select {
+          width: 100%;
+        }
+      }
+    }
+
+    > div {
+      display: grid;
+      grid-template-columns: max-content;
+      justify-content: center;
+    }
+
+    button {
+      width: 100%;
+      background-color: $purple;
+
+      @include breakpoint($screen-size-medium) {
+        width: $form-element-max-width;
+      }
+
+      &[class*="--valid"] {
+        background-color: $green;
+        color: $black;
+        font-weight: $font-weight-semi-bold;
+      }
+    }
+  }
+
+  .filename-preview {
+    color: $gray;
+    font-style: italic;
+  }
+}

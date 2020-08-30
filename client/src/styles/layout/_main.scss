@@ -1,0 +1,18 @@
+main {
+  display: grid;
+  grid-template-rows: max-content auto;
+  gap: $space-medium;
+  margin: 0 auto;
+  padding: $space-small;
+  width: $main-max-width;
+
+  @include breakpoint($screen-size-medium) {
+    padding: $space-large;
+    max-width: $main-max-width-desktop;
+  }
+}
+
+.hint {
+  color: $gray;
+  font-size: $font-size-small;
+}

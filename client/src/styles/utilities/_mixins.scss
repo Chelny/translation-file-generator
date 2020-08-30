@@ -1,0 +1,103 @@
+@mixin border-radius ($value: 2px) {
+  -webkit-border-radius: $value;
+  -moz-border-radius: $value;
+  border-radius: $value;
+  // keeps background from busting out of border 
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+}
+
+@mixin box-shadow($depth: 1) {
+  @if $depth==1 {
+    @include prefixed(box-shadow, (0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)));
+  }
+  @else if $depth==2 {
+    @include prefixed(box-shadow, (0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)));
+  }
+  @else if $depth==3 {
+    @include prefixed(box-shadow, (0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23)));
+  }
+  @else if $depth==4 {
+    @include prefixed(box-shadow, (0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22)));
+  }
+  @else if $depth==5 {
+    @include prefixed(box-shadow, (0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22)));
+  }
+  @include prefixed(transition, all 0.3s cubic-bezier(.25, .8, .25, 1));
+}
+
+@mixin breakpoint($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+@mixin gradient($direction, $from, $to, $fromPosition: 0%, $toPosition: 100%) { 
+  background: $from;
+  background: -webkit-gradient(linear, 0% 0%, $fromPosition 100%, from($from), to($to));
+  background: -webkit-linear-gradient($direction, $from $fromPosition, $to $toPosition);
+  background: -moz-linear-gradient($direction, $from $fromPosition, $to $toPosition);
+  background: -o-linear-gradient($direction, $from $fromPosition, $to $toPosition);
+  background: linear-gradient($direction, $from $fromPosition, $to $toPosition);
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content; 
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @-o-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  } 
+}
+
+@mixin opacity ($value: 0.5) {
+  opacity: $value;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" $value * 100 ")";
+  filter: alpha(opacity= $value * 100);
+  zoom: 1;
+}
+
+@mixin prefixed($property, $value) {
+  -webkit-#{$property}: #{$value};
+  -moz-#{$property}: #{$value};
+  -ms-#{$property}: #{$value};
+  -o-#{$property}: #{$value};
+  #{$property}: #{$value};
+}
+
+@mixin scrollbar($size, $track, $thumb, $thumbHover, $type: width) {
+  &::-webkit-scrollbar {
+    #{$type}: $size;
+
+    &-track {
+      background: $track;
+    }
+
+    &-thumb {
+      background: $thumb;
+    
+      &:hover {
+        background: $thumbHover;
+      }
+    }
+  }
+}

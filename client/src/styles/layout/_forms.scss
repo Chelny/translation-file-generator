@@ -1,0 +1,105 @@
+form {
+  display: grid;
+  row-gap: $space-medium;
+  
+  label {
+    font-weight: $font-weight-semi-bold;
+  }
+
+  input, textarea, select {
+    padding: $space-small/2 $space-small;
+    border: 1px solid $gray;
+    color: $black;
+    font-family: $base-font-family;
+    font-size: $font-size-normal;
+    line-height: 2;
+
+    &:disabled {
+      background-color: $silver;
+      cursor: not-allowed;
+    }
+  }
+
+  input {
+    &[type="file"] {
+      display: none;
+    }
+
+    &.validation-error {
+      border-color: $red;
+
+      &[type="file"] + button {
+        background-color: $red;
+        color: $white;
+      }
+    }
+  }
+
+  .input-group {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    justify-content: center;
+    align-items: center;
+
+    @include breakpoint($screen-size-medium) {
+      width: $form-element-max-width;
+    }
+
+    input {
+      border-right: none;
+
+      & + span {
+        padding: $space-small + 2 $space-small;
+        background-color: $silver;
+        font-weight: $font-weight-normal;
+        border: 1px solid $gray;
+        border-left: none;
+      }
+
+      &.validation-error {
+        & + span {
+          background-color: $red;
+          border-color: $red;
+          color: $white;
+        }
+      }
+    }
+  }
+
+  textarea {
+    resize: none;
+  }
+
+  select {
+    padding: $space-small;
+    height: 100%;
+
+    &.validation-error {
+      border-color: $red;
+    }
+  }
+
+  button {
+    padding: $space-medium;
+    border: none;
+    color: $white;
+    font-size: $font-size-normal;
+    text-transform: uppercase;
+    @include box-shadow(2);
+
+    &[type="submit"] {
+      background-color: $purple;
+      font-weight: $font-weight-semi-bold;
+    }
+
+    &:hover {
+      position: relative;
+      top: 3px;
+      cursor: pointer;
+    }
+  }
+}
+
+.error {
+  color: $red;
+}
