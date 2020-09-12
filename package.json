@@ -1,7 +1,7 @@
 {
   "name": "translation-file-generator",
-  "version": "0.1.0",
-  "description": "Generate translations files (.json) from a .xlsx file",
+  "version": "1.0.0",
+  "description": "Generate translations files (.json) from an Excel file",
   "author": {
     "name": "Chelny Duplan",
     "twitter": "@Chelny",
